@@ -1,0 +1,15 @@
+{% extends 'costos/minBase.html' %}
+{% load i18n %}
+{%load static %}
+{% block meta_desc %} A&B Cost {% endblock %}
+{% block title %} A&B Cost - Provider Detail {% endblock %}
+{%block content %}
+<h1>Provider</h1>
+<p>{{ Provider.id }}</p>
+<p>{{ Provider.name }}</p>
+        <hr>
+        <form method="post" action="{% url 'provider_detail' provider.id %}">
+            {% csrf_token %}
+        </form>
+       <hr>
+{% endblock %}}
